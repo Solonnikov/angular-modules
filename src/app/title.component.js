@@ -9,18 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.subtitle = '(v1)';
+var user_service_1 = require('./user.service');
+var TitleComponent = (function () {
+    function TitleComponent(userService) {
+        this.subtitle = '';
+        this.title = 'Angular Modules';
+        this.user = '';
+        this.user = userService.userName;
     }
-    AppComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], TitleComponent.prototype, "subtitle", void 0);
+    TitleComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n  <app-title [subtitle]=\"subtitle\"></app-title>\n  <app-contact></app-contact>\n"
+            moduleId: module.id,
+            selector: 'app-title',
+            templateUrl: './title.component.html',
         }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [user_service_1.UserService])
+    ], TitleComponent);
+    return TitleComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.0.js.map
+exports.TitleComponent = TitleComponent;
+//# sourceMappingURL=title.component.js.map
