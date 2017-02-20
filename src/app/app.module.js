@@ -10,16 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-// import { AppComponent }  from './app.component';
-var app_component_0_1 = require('./app.component.0');
+/* App Root */
+var app_component_1 = require('./app.component');
+/* Featured Modules */
+var contact_module_1 = require('./contact/contact.module');
+var core_module_1 = require('./core/core.module');
+// Routing NgModule
+var app_routing_module_1 = require('./app-routing.module');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [app_component_0_1.AppComponent],
-            bootstrap: [app_component_0_1.AppComponent]
+            imports: [
+                platform_browser_1.BrowserModule,
+                contact_module_1.ContactModule,
+                core_module_1.CoreModule.forRoot({ userName: 'Miss Marple' }),
+                app_routing_module_1.AppRoutingModule
+            ],
+            declarations: [app_component_1.AppComponent],
+            bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

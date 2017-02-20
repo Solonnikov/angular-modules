@@ -10,35 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-var forms_1 = require('@angular/forms');
+/* App Root */
+var app_component_0_1 = require('./app.component.0');
 var highlight_directive_1 = require('./highlight.directive');
 var title_component_1 = require('./title.component');
 var user_service_1 = require('./user.service');
-// import { AppComponent }  from './app.component';
-var app_component_0_1 = require('./app.component.0');
-var highlight_directive_2 = require('./contact/highlight.directive');
-var awesome_pipe_1 = require('./contact/awesome.pipe');
-var contact_component_1 = require('./contact/contact.component');
-var contact_service_1 = require('./contact/contact.service');
+/* Contact Imports */
+var contact_module_1 = require('./contact/contact.module');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [
-                platform_browser_1.BrowserModule,
-                forms_1.FormsModule
-            ],
-            declarations: [
-                app_component_0_1.AppComponent,
-                highlight_directive_1.HighlightDirective,
-                title_component_1.TitleComponent,
-                awesome_pipe_1.AwesomePipe,
-                contact_component_1.ContactComponent,
-                highlight_directive_2.HighlightDirective
-            ],
-            providers: [contact_service_1.ContactService, user_service_1.UserService],
-            bootstrap: [app_component_0_1.AppComponent]
+            imports: [platform_browser_1.BrowserModule, contact_module_1.ContactModule],
+            declarations: [app_component_0_1.AppComponent, highlight_directive_1.HighlightDirective, title_component_1.TitleComponent],
+            providers: [user_service_1.UserService],
+            bootstrap: [app_component_0_1.AppComponent],
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
